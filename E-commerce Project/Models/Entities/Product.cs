@@ -15,4 +15,7 @@ public class Product : AuditableEntity
     public int Quantity { get; set; }
     public bool HasDiscount { get; set; } 
     public bool IsDisplayed { get; set; }
+    
+    public int CategoryId { get; set; }
+    public Category Category { get; set; }
 }
