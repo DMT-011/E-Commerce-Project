@@ -11,5 +11,10 @@ public class ProductConfiguration : IEntityTypeConfiguration<Product>
         builder.Property(x => x.Slug)
             .HasMaxLength(50)
             .IsRequired();
+
+        builder.HasMany<ProductImage>(x => x.ProductImages)
+            .WithOne(x => x.Product)
+            .HasForeignKey(x => x.ProductId)
+            .OnDelete(DeleteBehavior.Restrict);
     }
 }

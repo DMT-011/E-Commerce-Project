@@ -18,4 +18,5 @@ public class Product : AuditableEntity
     
     public int CategoryId { get; set; }
     public Category Category { get; set; }
+    public ICollection<ProductImage> ProductImages { get; set; }
 }
