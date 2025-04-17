@@ -13,6 +13,10 @@ public class User : AuditableEntity
     public string Address { get; set; }
     public int Gender { get; set; } // 1: male, 2: female, 3: other
     public string? Avatar { get; set; }
-    public bool AccountStatus { get; set; }
+    public int AccountStatus { get; set; }
     
+    public int RoleId { get; set; }
+    public Cart Cart { get; set; }
+    public Role Role { get; set; }
+    public ICollection<Order> Orders { get; set; }
 }
